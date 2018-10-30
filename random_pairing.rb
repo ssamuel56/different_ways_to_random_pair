@@ -4,6 +4,8 @@ def pair_students(students)
   until randoms == []
     if randoms.length > 3 || randoms.length == 2
       arr << randoms.shift(2)
+    elsif randoms.length == 1
+      arr << randoms.shift(1)
     else
       arr << randoms.shift(3)
     end
