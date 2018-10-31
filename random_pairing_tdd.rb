@@ -45,4 +45,16 @@ class Test_for_random_pairing < Minitest::Test
     pairs = pair_students(["Sam", "Steven", "Tracey", "Billyjack", "Garry", "Josh", "Scott", "Josh", "Ricky", "Sally", "Kelly", "Hank"])
     assert_equal(6, pairs.count)
   end
+  def test_for_none
+    pairs = pair_students([])
+    assert_equal(0, pairs.count)
+  end
+  def test_for_same_name_3
+    pairs = pair_students(["Sam", "Sam", "Sam"])
+    assert_equal(1, pairs.count)
+  end
+  def test_for_3_variants_multiple_times
+    pairs = pair_students(["Sam", "Sam", "Sam", "Steven", "Steven", "Billyjack", "Billyjack", "Billyjack", "Billyjack"])
+    assert_equal(4, pairs.count)
+  end
 end
